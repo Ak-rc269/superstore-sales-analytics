@@ -1,0 +1,30 @@
+# Local secrets: never commit a Google service-account key or your .env.
+.env
+.env.*
+!.env.example
+credentials.json
+*credentials*.json
+*service-account*.json
+*service_account*.json
+secrets/
+kaggle.json
+
+# Local Python and editor state.
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.vscode/
+.idea/
+.ipynb_checkpoints/
+
+# Reproducible exports, local logs, and source data obtained separately from Kaggle.
+outputs/
+*.log
+data/raw/*.csv
+data/raw/*.zip
+
+# Operating-system files.
+.DS_Store
+Thumbs.db

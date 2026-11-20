@@ -1,0 +1,41 @@
+Superstore Sales & Profit Analytics
+
+เริ่มจากรันบนเครื่อง Windows ก่อน แล้วจึงตั้ง Google Sheets และ Dashboard
+
+1. แตก ZIP แล้วเปิดโฟลเดอร์ superstore_pipeline ใน VS Code
+   โฟลเดอร์ที่ถูกต้องต้องเห็น run_pipeline.py และ docker-compose.yml
+
+2. เปิด Docker Desktop และ Terminal แบบ PowerShell
+   ตรวจเครื่องมือ:
+   py --list
+   docker info
+
+3. สร้าง environment ด้วย Python 3.11 หรือ 3.12
+   ตัวอย่างเมื่อมี Python 3.12:
+   py -3.12 -m venv .venv
+   .\.venv\Scripts\python.exe -m pip install -r requirements.txt
+
+4. ตั้งค่าครั้งแรกและเปิดฐานข้อมูล
+   Copy-Item .env.example .env
+   notepad .env
+   ตั้ง POSTGRES_PASSWORD เป็นรหัสสำหรับฐานข้อมูลบนเครื่องแล้วบันทึก
+   docker compose up -d
+   docker compose ps
+   รอให้ db เป็น healthy
+
+5. รันเฉพาะฐานข้อมูลก่อน โดยยังไม่ต้องตั้ง Google
+   .\.venv\Scripts\python.exe run_pipeline.py --skip-publish
+
+เมื่อสำเร็จ: ดู outputs/data_quality.json และยอดขาย 2,297,200.8603
+กำไร 286,397.0217 / 9,994 รายการสินค้า / 5,009 คำสั่งซื้อ
+
+ขั้นต่อไป: ทำตาม README.md หัวข้อ 5 เพื่อตั้ง Google API Credentials
+จากนั้นรัน .\.venv\Scripts\python.exe run_pipeline.py
+สร้าง Dashboard ตาม docs/dashboard_guide.md
+
+รายละเอียดทั้งหมดอยู่ใน README.md
+หากติดขั้นตอนไหน ส่งภาพ Terminal ที่แสดงข้อผิดพลาดมาได้
+ไม่ส่งไฟล์ credentials.json หรือเนื้อหา .env ที่มีรหัสผ่าน
+
+สถานะไฟล์ชุดนี้: ทดสอบข้อมูลและการแปลงค่าที่จะส่ง Sheets แล้ว
+ยังต้องทดสอบ PostgreSQL และ Google API จริงบนเครื่องและบัญชีของผู้ใช้

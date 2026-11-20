@@ -1,0 +1,3 @@
+# Optional: only needed to regenerate the static dashboard reference image.
+-r requirements.txt
+matplotlib>=3.8,<4

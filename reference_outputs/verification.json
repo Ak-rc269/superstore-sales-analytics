@@ -1,0 +1,24 @@
+{
+  "checked_on": "2026-11-20",
+  "offline_unit_tests": {
+    "command": "python -m unittest discover -s tests -v",
+    "tests": 11,
+    "result": "passed",
+    "scope": [
+      "data transformation",
+      "independent Decimal totals",
+      "distinct order counts",
+      "loss-line and suspected-duplicate retention",
+      "US date parsing and postal codes",
+      "discount boundaries and invalid inputs",
+      "Google Sheets serialization and mocked worksheet writes"
+    ]
+  },
+  "python_syntax": "passed",
+  "database_integration": "not_run_environment_has_no_Docker_or_PostgreSQL",
+  "google_sheets_publication": "not_run_no_user_credentials",
+  "data_studio_report": "not_created_in_user_account",
+  "github_repository": "not_created",
+  "gitignore_rules": "passed_for_local_credentials_environment_raw_data_and_required_tracked_examples",
+  "cli_help": "passed_without_network_or_database_dependencies"
+}

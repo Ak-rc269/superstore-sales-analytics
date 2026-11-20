@@ -1,0 +1,13 @@
+{
+  "source": "Uploaded Sample - Superstore.csv.zip / Sample - Superstore.csv",
+  "kaggle_url": "https://www.kaggle.com/datasets/vivek468/superstore-dataset-final",
+  "csv_path": "data/raw/superstore.csv",
+  "encoding": "cp1252",
+  "sha256": "58fb59c63089e564d835e4aabe19d371757de1137a5bf1888243ae386c4b7a97",
+  "source_rows": 9994,
+  "source_columns": 21,
+  "reference_method": "Pure local pandas transformation of uploaded CSV; these snapshots are not evidence of a PostgreSQL or Google Sheets execution.",
+  "verified_on": "2026-11-20",
+  "python_version": "3.12.14",
+  "pandas_version": "2.2.3"
+}
